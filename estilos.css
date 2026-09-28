@@ -1,0 +1,258 @@
+/* ==========================================================================
+   Orden del Monitor Secreto · Orden del Cordón Escarlata — Distrito de España
+   Hoja de estilos común · v1
+   Tipografías: Cinzel (títulos) · Cormorant Garamond (texto)
+   Colores de Mark Masons' Hall: granate y oro (OSM) · escarlata (OSC)
+   ========================================================================== */
+
+/* ── 1. Variables ─────────────────────────────────────────────────────── */
+:root {
+  --azul: #002366;          /* institucional, común a todo el sitio */
+  --azul-noche: #00173F;
+  --granate: #7E272E;       /* Monitor Secreto */
+  --oro: #E4A450;
+  --oro-oscuro: #A8742A;
+  --morado: #5B2A6E;        /* acento del Monitor Secreto (hábito) */
+  --escarlata: #C82020;     /* Cordón Escarlata */
+  --naranja: #F7AA50;
+
+  --fondo: #FBF8F2;
+  --fondo-alt: #F3EDE2;
+  --texto: #2B2320;
+  --texto-suave: #6A5F58;
+  --linea: #E2D8C8;
+  --tarjeta: #FFFFFF;
+
+  /* Tema por defecto (portada, contacto, crónicas) */
+  --principal: var(--azul);
+  --acento: var(--oro);
+
+  --f-titulo: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --f-texto: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --ancho: 1180px;
+  --radio: 4px;
+  --sombra: 0 2px 14px rgba(43, 35, 32, .08);
+}
+
+/* Temas de cada Orden: se activan con una clase en <body> */
+.tema-osm { --principal: var(--granate); --acento: var(--oro); }
+.tema-osc { --principal: var(--escarlata); --acento: var(--naranja); }
+
+/* ── 2. Base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--f-texto);
+  font-size: 1.22rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--principal); text-underline-offset: 3px; }
+a:hover { color: var(--oro-oscuro); }
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+
+h1, h2, h3, h4 {
+  font-family: var(--f-titulo);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 .6em;
+  color: var(--principal);
+}
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.45rem, 3.2vw, 2.1rem); }
+h3 { font-size: 1.2rem; letter-spacing: .02em; }
+p { margin: 0 0 1em; }
+
+.contenedor { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 1.4rem; }
+.seccion { padding: 4rem 0; }
+.seccion.alt { background: var(--fondo-alt); }
+.seccion-titulo { text-align: center; margin-bottom: 2.4rem; }
+.seccion-titulo::after {
+  content: ""; display: block; width: 64px; height: 2px;
+  background: var(--acento); margin: .9rem auto 0;
+}
+.entradilla { font-size: 1.35rem; color: var(--texto-suave); max-width: 46rem; margin: 0 auto 2rem; text-align: center; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ── 3. Navegación (patrón GLPM) ──────────────────────────────────────── */
+nav.principal {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .8rem 2rem;
+  background: var(--azul-noche);
+  border-bottom: 2px solid var(--oro);
+}
+.nav-logo { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.nav-logo img { height: 48px; width: auto; }
+.nav-titulo {
+  font-family: var(--f-titulo); font-size: .7rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--oro); line-height: 1.5;
+}
+.nav-enlaces { display: flex; gap: 1.8rem; list-style: none; margin: 0; padding: 0; }
+.nav-enlaces a {
+  font-family: var(--f-titulo); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; text-decoration: none; color: #D6DCE6;
+}
+.nav-enlaces a:hover, .nav-enlaces a.activo { color: var(--oro); }
+.idioma { display: flex; border: 1px solid rgba(228,164,80,.45); margin-left: 1.6rem; }
+.idioma a {
+  font-family: var(--f-titulo); font-size: .64rem; letter-spacing: .12em;
+  padding: .3rem .65rem; text-decoration: none; color: #D6DCE6;
+}
+.idioma a.activo { background: var(--oro); color: var(--azul-noche); font-weight: 700; }
+.nav-hamburguesa {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: 0; padding: 6px; cursor: pointer;
+}
+.nav-hamburguesa span { display: block; width: 26px; height: 2px; background: var(--oro); }
+.nav-movil {
+  display: none; flex-direction: column;
+  position: sticky; top: 62px; z-index: 99;
+  background: var(--azul-noche); padding: .6rem 1.4rem 1.2rem;
+  border-bottom: 1px solid rgba(228,164,80,.3);
+}
+.nav-movil.abierto { display: flex; }
+.nav-movil a {
+  font-family: var(--f-titulo); font-size: .82rem; letter-spacing: .1em;
+  text-transform: uppercase; text-decoration: none; color: #D6DCE6;
+  padding: .8rem 0; border-bottom: 1px solid rgba(228,164,80,.12);
+}
+.nav-movil a.activo { color: var(--oro); }
+.nav-movil .idioma { align-self: flex-start; margin: 1rem 0 0; }
+.nav-movil .idioma a { border-bottom: 0; padding: .35rem .75rem; }
+
+/* ── 4. Franja de cabecera de cada Orden (patrón Londres) ─────────────── */
+.franja { background: var(--principal); color: #fff; padding: 3.2rem 0; }
+.franja .contenedor {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2.5rem;
+}
+.franja h1 { color: #fff; margin-bottom: .35em; }
+.franja .subtitulo { font-size: 1.35rem; font-style: italic; margin: 0; opacity: .95; }
+.franja .sello {
+  width: clamp(150px, 22vw, 240px); aspect-ratio: 1;
+  border-radius: 50%; background: #fff; padding: 6px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.25);
+}
+.franja .sello img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.tema-osm .franja { border-bottom: 5px solid var(--morado); }
+.tema-osc .franja { border-bottom: 5px solid var(--naranja); }
+
+/* ── 5. Botones ───────────────────────────────────────────────────────── */
+.boton, .boton-borde {
+  display: inline-block; font-family: var(--f-titulo);
+  font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+  text-decoration: none; padding: .8rem 1.5rem; border-radius: var(--radio);
+  transition: background .25s, color .25s;
+}
+.boton { background: var(--principal); color: #fff; border: 1px solid var(--principal); }
+.boton:hover { background: var(--azul-noche); color: var(--oro); }
+.boton-borde { border: 1px solid var(--principal); color: var(--principal); background: transparent; }
+.boton-borde:hover { background: var(--principal); color: #fff; }
+.botones { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+
+/* ── 6. Tarjetas: Órdenes, grados, gobernantes ────────────────────────── */
+.rejilla { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.tarjeta {
+  background: var(--tarjeta); border-radius: var(--radio);
+  box-shadow: var(--sombra); overflow: hidden;
+  border-top: 4px solid var(--principal);
+  display: flex; flex-direction: column;
+}
+.tarjeta img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.tarjeta .cuerpo { padding: 1.4rem 1.5rem 1.6rem; flex: 1; }
+.tarjeta .etiqueta {
+  font-family: var(--f-titulo); font-size: .68rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--oro-oscuro); margin-bottom: .4rem; display: block;
+}
+.tarjeta p:last-child { margin-bottom: 0; }
+
+/* Tarjetas de acceso a cada Orden en la portada */
+.orden-osm { --principal: var(--granate); }
+.orden-osc { --principal: var(--escarlata); }
+
+.gobernante { text-align: center; }
+.gobernante .cuerpo { padding: 1.4rem 1rem; }
+.gobernante .cargo {
+  font-family: var(--f-titulo); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--principal); margin: 0 0 .3rem;
+}
+.gobernante .nombre { font-size: 1.25rem; font-weight: 600; margin: 0; }
+
+/* Camino de ingreso: Maestro Masón → Monitor Secreto → Príncipe → Cordón */
+.camino {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem;
+  list-style: none; padding: 0; margin: 0;
+}
+.camino li {
+  font-family: var(--f-titulo); font-size: .78rem; letter-spacing: .08em;
+  padding: .7rem 1.1rem; border: 1px solid var(--linea); background: var(--tarjeta);
+  border-radius: var(--radio);
+}
+.camino li:not(:last-child)::after { content: " →"; color: var(--oro-oscuro); }
+.camino .paso-osm { border-color: var(--granate); color: var(--granate); }
+.camino .paso-osc { border-color: var(--escarlata); color: var(--escarlata); }
+
+/* ── 7. Crónicas ──────────────────────────────────────────────────────── */
+.cronica .fecha { font-size: 1rem; color: var(--texto-suave); font-style: italic; }
+.foto { margin: 1.6rem 0; }
+.foto figcaption { font-size: .98rem; color: var(--texto-suave); font-style: italic; margin-top: .4rem; }
+
+/* Vídeo adaptable (YouTube) */
+.video { position: relative; aspect-ratio: 16/9; border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ── 8. Pie ───────────────────────────────────────────────────────────── */
+footer {
+  background: var(--azul-noche); color: #C9D0DC;
+  padding: 2.6rem 0 1.6rem; font-size: 1.05rem; border-top: 2px solid var(--oro);
+}
+footer .contenedor { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+footer h4 { color: var(--oro); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+footer a { color: #E6EAF1; }
+footer a:hover { color: var(--oro); }
+.pie-final {
+  text-align: center; font-size: .92rem; color: #8F9AAE;
+  margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid rgba(228,164,80,.15);
+}
+
+/* ── 9. Móvil ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav.principal { padding: .7rem 1.2rem; }
+  .nav-enlaces, nav.principal > .idioma { display: none; }
+  .nav-hamburguesa { display: flex; }
+  .nav-logo img { height: 42px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1.15rem; }
+  .seccion { padding: 2.8rem 0; }
+  .franja { padding: 2.2rem 0; text-align: center; }
+  .franja .contenedor { grid-template-columns: 1fr; gap: 1.4rem; }
+  .franja .sello { order: -1; margin: 0 auto; width: 150px; }
+  .nav-titulo { font-size: .6rem; }
+}
+
+/* ── 10. Modo oscuro automático ───────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #14110F; --fondo-alt: #1C1815; --tarjeta: #221D19;
+    --texto: #EDE5D8; --texto-suave: #B3A898; --linea: #3A322B;
+    --sombra: 0 2px 14px rgba(0,0,0,.4);
+  }
+  h1, h2, h3, h4, a { color: var(--acento); }
+  .franja h1 { color: #fff; }
+  .tarjeta .etiqueta { color: var(--oro); }
+  .boton { color: #fff; }
+  .boton-borde { color: var(--acento); border-color: var(--acento); }
+  .camino .paso-osm { color: var(--oro); }
+  .camino .paso-osc { color: var(--naranja); }
+}
+
+/* ── 11. Impresión ────────────────────────────────────────────────────── */
+@media print {
+  nav.principal, .nav-movil, footer, .video { display: none; }
+  .franja { background: none; color: #000; }
+  .franja h1 { color: #000; }
+}
