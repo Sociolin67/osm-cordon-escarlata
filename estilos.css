@@ -260,3 +260,15 @@ footer a:hover { color: var(--oro); }
 .formulario .oculto { position: absolute; left: -9999px; }
 .aviso-ok { scroll-margin-top: 90px; display: none; background: #EEF5EA; border-left: 4px solid #4A7A3A; padding: 1rem 1.2rem; border-radius: var(--radio); margin-bottom: 1.6rem; }
 .aviso-ok.visible { display: block; }
+
+/* ── 13. Cúpula de gobierno: el jefe en el centro, el Diputado a su derecha
+        (a la izquierda del espectador) y el Asistente al otro lado ─────── */
+.cupula { display: grid; gap: 1.6rem; grid-template-columns: 1fr; }
+.cupula-extra { display: grid; gap: 1.6rem; margin: 1.6rem auto 0; }
+@media (min-width: 700px) {
+  .cupula { grid-template-columns: repeat(3, 1fr); }
+  .cupula .jefe { grid-column: 2; grid-row: 1; }
+  .cupula .dcha { grid-column: 1; grid-row: 1; }
+  .cupula .izda { grid-column: 3; grid-row: 1; }
+  .cupula-extra { max-width: calc((100% - 3.2rem) / 3); }
+}
