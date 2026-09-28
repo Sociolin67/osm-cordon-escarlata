@@ -234,21 +234,8 @@ footer a:hover { color: var(--oro); }
   .nav-titulo { font-size: .6rem; }
 }
 
-/* ── 10. Modo oscuro automático ───────────────────────────────────────── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fondo: #14110F; --fondo-alt: #1C1815; --tarjeta: #221D19;
-    --texto: #EDE5D8; --texto-suave: #B3A898; --linea: #3A322B;
-    --sombra: 0 2px 14px rgba(0,0,0,.4);
-  }
-  h1, h2, h3, h4, a { color: var(--acento); }
-  .franja h1 { color: #fff; }
-  .tarjeta .etiqueta { color: var(--oro); }
-  .boton { color: #fff; }
-  .boton-borde { color: var(--acento); border-color: var(--acento); }
-  .camino .paso-osm { color: var(--oro); }
-  .camino .paso-osc { color: var(--naranja); }
-}
+/* ── 10. Siempre en modo claro ──────────────────────────────────────── */
+:root { color-scheme: only light; }
 
 /* ── 11. Impresión ────────────────────────────────────────────────────── */
 @media print {
@@ -256,3 +243,20 @@ footer a:hover { color: var(--oro); }
   .franja { background: none; color: #000; }
   .franja h1 { color: #000; }
 }
+
+/* ── 12. Formulario de contacto ───────────────────────────────────────── */
+.formulario { display: grid; gap: 1.1rem; background: var(--tarjeta); padding: 2rem 1.8rem; border-radius: var(--radio); box-shadow: var(--sombra); border-top: 4px solid var(--principal); }
+.formulario .campo { display: grid; gap: .35rem; }
+.formulario label, .formulario legend { font-family: var(--f-titulo); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--principal); }
+.formulario input, .formulario select, .formulario textarea {
+  font: inherit; font-size: 1.12rem; color: var(--texto); background: var(--fondo);
+  border: 1px solid var(--linea); border-radius: var(--radio); padding: .65rem .8rem; width: 100%;
+}
+.formulario textarea { min-height: 9rem; resize: vertical; }
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus { outline: 2px solid var(--acento); border-color: var(--acento); }
+.formulario .check { display: flex; gap: .6rem; align-items: flex-start; font-family: var(--f-texto); font-size: 1.02rem; text-transform: none; letter-spacing: 0; color: var(--texto); }
+.formulario .check input { width: auto; margin-top: .35rem; }
+.formulario .nota { font-size: .98rem; color: var(--texto-suave); margin: 0; }
+.formulario .oculto { position: absolute; left: -9999px; }
+.aviso-ok { scroll-margin-top: 90px; display: none; background: #EEF5EA; border-left: 4px solid #4A7A3A; padding: 1rem 1.2rem; border-radius: var(--radio); margin-bottom: 1.6rem; }
+.aviso-ok.visible { display: block; }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Secret Monitor and Scarlet Cord · District of Spain</title>
+<meta name="description" content="Request information about joining the Order of the Secret Monitor or the Order of the Scarlet Cord in Spain.">
+<meta name="theme-color" content="#00173F">
+<link rel="alternate" hreflang="es" href="contacto.html">
+<link rel="alternate" hreflang="en" href="contacto-en.html">
+<link rel="icon" href="emblema-osm.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="principal">
+  <a href="index-en.html" class="nav-logo"><span class="nav-titulo">Secret Monitor<br>Scarlet Cord · Spain</span></a>
+  <ul class="nav-enlaces">
+    <li><a href="index-en.html">Home</a></li>
+    <li><a href="monitor-secreto-en.html">Secret Monitor</a></li>
+    <li><a href="cordon-escarlata-en.html">Scarlet Cord</a></li>
+    <li><a href="cronicas-en.html">Reports</a></li>
+    <li><a href="contacto-en.html" class="activo" aria-current="page">Contact</a></li>
+  </ul>
+  <div class="idioma"><a href="contacto.html" lang="es" hreflang="es">ES</a><a href="contacto-en.html" lang="en" hreflang="en" class="activo">EN</a></div>
+  <button class="nav-hamburguesa" type="button" aria-label="Menu" aria-controls="navMovil" aria-expanded="false" onclick="var m=document.getElementById('navMovil');this.setAttribute('aria-expanded',m.classList.toggle('abierto'))"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-movil" id="navMovil">
+  <a href="index-en.html">Home</a>
+  <a href="monitor-secreto-en.html">Secret Monitor</a>
+  <a href="cordon-escarlata-en.html">Scarlet Cord</a>
+  <a href="cronicas-en.html">Reports</a>
+  <a href="contacto-en.html" class="activo">Contact</a>
+  <div class="idioma"><a href="contacto.html" lang="es" hreflang="es">ES</a><a href="contacto-en.html" lang="en" hreflang="en" class="activo">EN</a></div>
+</div>
+
+<header class="franja">
+  <div class="contenedor">
+    <div>
+      <h1>Contact</h1>
+      <p class="subtitulo">Request information about joining either Order</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="seccion">
+  <div class="contenedor" style="max-width:760px">
+    <div class="aviso-ok" id="avisoOk" role="status">Message sent. Thank you for writing to us: we will reply as soon as possible.</div>
+    <p class="entradilla">If you are a Master Mason and would like to learn about the Secret Monitor, or a Prince of the Secret Monitor interested in the Scarlet Cord, please write to us. Your message will reach the District Grand Recorder, who will reply and put you in touch with your nearest Conclave or Consistory.</p>
+    <form class="formulario" action="https://formsubmit.co/districtrecorderspain@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from the website (EN)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://sociolin67.github.io/osm-cordon-escarlata/contacto-en.html?enviado=1">
+      <input type="text" name="_honey" class="oculto" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="campo"><label for="nombre">Full name</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
+      <div class="campo"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="campo"><label for="telefono">Telephone (optional)</label><input id="telefono" name="telefono" type="tel" autocomplete="tel"></div>
+      <div class="campo"><label for="localidad">Town and province</label><input id="localidad" name="localidad" type="text" required></div>
+      <div class="campo"><label for="orden">Order of interest</label>
+        <select id="orden" name="orden" required>
+            <option>Order of the Secret Monitor</option>
+            <option>Order of the Scarlet Cord</option>
+            <option>Both Orders</option>
+            <option>General information</option>
+        </select></div>
+      <div class="campo"><label for="logia">Your Lodge and Grand Lodge</label><input id="logia" name="logia" type="text" placeholder="For example: … Lodge No. …, United Grand Lodge of England" required></div>
+      <div class="campo"><label for="mensaje">Message</label><textarea id="mensaje" name="mensaje" required></textarea></div>
+      <label class="check"><input type="checkbox" name="privacidad" value="acepta" required><span>I have read and agree that my details will be used solely to reply to this enquiry.</span></label>
+      <p class="nota">Your details are sent through the FormSubmit service and are used only to deal with your enquiry; they are not passed to third parties or added to mailing lists.</p>
+      <div><button class="boton" type="submit">Send enquiry</button></div>
+    </form>
+  </div>
+</section>
+
+<section class="seccion alt">
+  <div class="contenedor" style="max-width:760px">
+    <h2 class="seccion-titulo">Other ways to contact us</h2>
+    <p class="entradilla">You may also write directly to the District Grand Recorder: <a href="mailto:districtrecorderspain@gmail.com">districtrecorderspain@gmail.com</a>.<br>Brethren of the Secret Monitor may join the District’s <a href="https://www.facebook.com/groups/2115940143132112/" rel="noopener">private Facebook group</a>.</p>
+  </div>
+</section>
+</main>
+
+<script>
+if (new URLSearchParams(location.search).get('enviado')) {
+  var a = document.getElementById('avisoOk'); a.classList.add('visible'); a.scrollIntoView();
+}
+</script>
+
+<footer>
+  <div class="contenedor">
+    <div><h4>District of Spain</h4><p>Order of the Secret Monitor<br>Ancient and Masonic Order of the Scarlet Cord</p></div>
+    <div><h4>Official links</h4><p><a href="https://markmasonshall.org/orders/osm" rel="noopener">Order of the Secret Monitor (London)</a><br><a href="https://markmasonshall.org/orders/osc" rel="noopener">Order of the Scarlet Cord (London)</a><br><a href="https://www.facebook.com/groups/2115940143132112/" rel="noopener">Secret Monitor Facebook group (private)</a></p></div>
+    <div><h4>Contact</h4><p>To request information about joining either Order, please use our <a href="contacto-en.html">contact form</a>.</p></div>
+  </div>
+  <p class="pie-final">© 2026 · District of Spain · Under the jurisdiction of Mark Masons’ Hall, London</p>
+</footer>
+
+</body>
+</html>
