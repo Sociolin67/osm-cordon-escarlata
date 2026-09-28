@@ -133,10 +133,10 @@ nav.principal {
 .franja .subtitulo { font-size: 1.35rem; font-style: italic; margin: 0; opacity: .95; }
 .franja .sello {
   width: clamp(150px, 22vw, 240px); aspect-ratio: 1;
-  border-radius: 50%; background: #fff; padding: 6px;
-  box-shadow: 0 0 0 4px rgba(255,255,255,.25);
+  border-radius: 50%; overflow: hidden;
+  box-shadow: 0 0 0 3px var(--oro), 0 4px 18px rgba(0,0,0,.35);
 }
-.franja .sello img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.franja .sello img { width: 100%; height: 100%; object-fit: cover; }
 .tema-osm .franja { border-bottom: 5px solid var(--morado); }
 .tema-osc .franja { border-bottom: 5px solid var(--naranja); }
 
