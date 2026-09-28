@@ -8,11 +8,13 @@
 <meta name="theme-color" content="#00173F">
 <link rel="alternate" hreflang="es" href="cordon-escarlata.html">
 <link rel="alternate" hreflang="en" href="cordon-escarlata-en.html">
-<link rel="icon" href="emblema-osc.jpg">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos.css?v=2">
 </head>
 <body class="tema-osc">
 
@@ -151,5 +153,8 @@
   <p class="pie-final">© 2026 · District of Spain · Under the jurisdiction of Mark Masons’ Hall, London</p>
 </footer>
 
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('service-worker.js'); }
+</script>
 </body>
 </html>
