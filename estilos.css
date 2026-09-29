@@ -303,3 +303,14 @@ footer a:hover { color: var(--oro); }
 @media (max-width: 700px) {
   .visor .visor-btn.ant { left: .4rem; } .visor .visor-btn.sig { right: .4rem; }
 }
+
+/* ── 15. Escudos de la portada como acceso a cada Orden ───────────────── */
+.acceso-orden { display: flex; flex-direction: column; align-items: center; gap: .9rem; text-decoration: none; color: #fff; }
+.acceso-orden .sello { display: block; transition: transform .25s ease, box-shadow .25s ease; }
+.acceso-orden:hover .sello, .acceso-orden:focus-visible .sello {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px var(--oro), 0 0 0 8px rgba(228,164,80,.35), 0 6px 22px rgba(0,0,0,.45);
+}
+.acceso-orden .rotulo { font-family: var(--f-titulo); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--oro); }
+.acceso-orden:hover .rotulo, .acceso-orden:focus-visible .rotulo { color: #fff; }
+.acceso-orden:focus-visible { outline: none; }
