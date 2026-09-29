@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
-<link rel="stylesheet" href="estilos.css?v=3">
+<link rel="stylesheet" href="estilos.css?v=4">
 </head>
 <body>
 
@@ -95,7 +95,68 @@
     <p class="fecha">26 September 2026 · Ciudad Quesada (Alicante)</p>
     <h3>A day of installations in the District of Spain</h3>
     <p>The District of Spain held a particularly significant day: the District Grand Senatus of the Scarlet Cord and the District Grand Conclave of the Secret Monitor installed their new District Grand Summus and their new District Grand Supreme Ruler, in ceremonies conducted by the Grand Summus and the Grand Supreme Ruler of the two Orders.</p>
-    <p><a class="boton-borde" href="cronicas-en.html">Read the report</a></p>
+    <div class="galeria">
+      <div class="galeria-pista" tabindex="0">
+        <figure><img src="galeria-2026-01.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 1/18" width="1379" height="919" loading="lazy"></figure>
+        <figure><img src="galeria-2026-02.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 2/18" width="1400" height="1050" loading="lazy"></figure>
+        <figure><img src="galeria-2026-03.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 3/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-04.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 4/18" width="1400" height="1050" loading="lazy"></figure>
+        <figure><img src="galeria-2026-05.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 5/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-06.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 6/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-07.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 7/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-08.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 8/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-09.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 9/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-10.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 10/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-11.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 11/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-12.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 12/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-13.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 13/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-14.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 14/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-15.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 15/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-16.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 16/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-17.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 17/18" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="galeria-2026-18.jpg" alt="Installations day of the District of Spain, 26 September 2026 · photo 18/18" width="1400" height="933" loading="lazy"></figure>
+      </div>
+      <button class="galeria-btn ant" type="button" aria-label="Previous photo">‹</button>
+      <button class="galeria-btn sig" type="button" aria-label="Next photo">›</button>
+    </div>
+    <div class="galeria-pie"><div class="galeria-puntos"></div><span class="galeria-contador"></span></div>
+    <p class="entradilla" style="margin-top:.6rem;font-size:1rem">Tap a photo to view it full screen.</p>
+    <dialog class="visor" id="visor">
+      <img src="galeria-2026-01.jpg" alt="">
+      <button class="visor-btn ant" type="button" aria-label="Previous photo">‹</button>
+      <button class="visor-btn sig" type="button" aria-label="Next photo">›</button>
+      <button class="visor-btn cerrar" type="button" aria-label="Close">×</button>
+    </dialog>
+    <script>
+    (function () {
+      var g = document.querySelector('.galeria'), p = g.querySelector('.galeria-pista');
+      var imgs = [].slice.call(p.querySelectorAll('img')), puntos = document.querySelector('.galeria-puntos');
+      var cont = document.querySelector('.galeria-contador'), v = document.getElementById('visor'), vi = v.querySelector('img'), i = 0;
+      imgs.forEach(function (im, k) {
+        var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', (k + 1) + ' / ' + imgs.length);
+        b.onclick = function () { ir(k); }; puntos.appendChild(b);
+        im.onclick = function () { ir(k); vi.src = im.src; vi.alt = im.alt; v.showModal(); };
+      });
+      function marcar() {
+        [].forEach.call(puntos.children, function (d, k) { d.classList.toggle('activo', k === i); });
+        cont.textContent = (i + 1) + ' / ' + imgs.length;
+      }
+      function ir(k) { i = (k + imgs.length) % imgs.length; p.scrollTo({ left: p.clientWidth * i, behavior: 'smooth' }); marcar(); }
+      function mover(d) { ir(i + d); if (v.open) { vi.src = imgs[i].src; vi.alt = imgs[i].alt; } }
+      p.addEventListener('scroll', function () { var k = Math.round(p.scrollLeft / p.clientWidth); if (k !== i) { i = k; marcar(); } }, { passive: true });
+      g.querySelector('.ant').onclick = function () { mover(-1); };
+      g.querySelector('.sig').onclick = function () { mover(1); };
+      v.querySelector('.ant').onclick = function () { mover(-1); };
+      v.querySelector('.sig').onclick = function () { mover(1); };
+      v.querySelector('.cerrar').onclick = function () { v.close(); };
+      v.addEventListener('click', function (e) { if (e.target === v) v.close(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') mover(-1); else if (e.key === 'ArrowRight') mover(1);
+      });
+      marcar();
+    })();
+    </script>
+    <p style="text-align:center;margin-top:1.2rem"><a class="boton-borde" href="cronicas-en.html">Read the report</a></p>
   </div>
 </section>
 </main>

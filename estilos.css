@@ -272,3 +272,34 @@ footer a:hover { color: var(--oro); }
   .cupula .izda { grid-column: 3; grid-row: 1; }
   .cupula-extra { max-width: calc((100% - 3.2rem) / 3); }
 }
+
+/* ── 14. Presentación de fotos (galería deslizante) y visor ──────────── */
+.galeria { position: relative; margin: 1.6rem 0 0; }
+.galeria-pista {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  border-radius: var(--radio); box-shadow: var(--sombra); background: #111;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.galeria-pista::-webkit-scrollbar { display: none; }
+.galeria-pista figure { flex: 0 0 100%; margin: 0; scroll-snap-align: center; aspect-ratio: 3 / 2; }
+.galeria-pista img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; }
+.galeria-btn, .visor-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(0, 23, 63, .72); color: #fff; font-size: 1.6rem; line-height: 1;
+}
+.galeria-btn:hover, .visor-btn:hover { background: var(--principal); }
+.galeria-btn.ant { left: .6rem; } .galeria-btn.sig { right: .6rem; }
+.galeria-pie { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: .8rem; flex-wrap: wrap; }
+.galeria-puntos { display: flex; gap: .45rem; flex-wrap: wrap; justify-content: center; }
+.galeria-puntos button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: var(--linea); cursor: pointer; }
+.galeria-puntos button.activo { background: var(--principal); }
+.galeria-contador { font-size: .95rem; color: var(--texto-suave); }
+.visor { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; overflow: visible; }
+.visor::backdrop { background: rgba(0, 0, 0, .92); }
+.visor img { display: block; max-width: 94vw; max-height: 86vh; margin: auto; }
+.visor .visor-btn.ant { left: -3.4rem; } .visor .visor-btn.sig { right: -3.4rem; }
+.visor .cerrar { position: fixed; top: calc(1rem + env(safe-area-inset-top, 0px)); right: 1rem; transform: none; }
+@media (max-width: 700px) {
+  .visor .visor-btn.ant { left: .4rem; } .visor .visor-btn.sig { right: .4rem; }
+}
