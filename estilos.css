@@ -1,6 +1,6 @@
 /* ==========================================================================
    Orden del Monitor Secreto · Orden del Cordón Escarlata — Distrito de España
-   Hoja de estilos común · v1
+   Hoja de estilos común · v7
    Tipografías: Cinzel (títulos) · Cormorant Garamond (texto)
    Colores de Mark Masons' Hall: granate y oro (OSM) · escarlata (OSC)
    ========================================================================== */
@@ -11,7 +11,7 @@
   --azul-noche: #00173F;
   --granate: #7E272E;       /* Monitor Secreto */
   --oro: #E4A450;
-  --oro-oscuro: #A8742A;
+  --oro-oscuro: #8C5F1E;   /* oro para texto sobre fondo claro (contraste AA) */
   --escarlata: #C82020;     /* Cordón Escarlata */
   --naranja: #F7AA50;
 
@@ -209,7 +209,7 @@ footer {
   padding: 2.6rem 0 1.6rem; font-size: 1.05rem; border-top: 2px solid var(--oro);
 }
 footer .contenedor { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-footer h4 { color: var(--oro); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+footer h2, footer h4 { color: var(--oro); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
 footer a { color: #E6EAF1; }
 footer a:hover { color: var(--oro); }
 .pie-final {
@@ -310,6 +310,6 @@ footer a:hover { color: var(--oro); }
   transform: scale(1.06);
   box-shadow: 0 0 0 3px var(--oro), 0 0 0 8px rgba(228,164,80,.35), 0 6px 22px rgba(0,0,0,.45);
 }
-.acceso-orden .rotulo { font-family: var(--f-titulo); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--oro); }
+.acceso-orden .rotulo { font-family: var(--f-titulo); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #F0BC70; }
 .acceso-orden:hover .rotulo, .acceso-orden:focus-visible .rotulo { color: #fff; }
 .acceso-orden:focus-visible { outline: none; }
