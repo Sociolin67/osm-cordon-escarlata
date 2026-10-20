@@ -60,4 +60,28 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://monitorsecreto-scarletcord.es/contacto.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://monitorsecreto-scarletcord.es/contacto-en.html"/>
   </url>
+  <url>
+    <loc>https://monitorsecreto-scarletcord.es/aviso-legal.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monitorsecreto-scarletcord.es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monitorsecreto-scarletcord.es/aviso-legal-en.html"/>
+  </url>
+  <url>
+    <loc>https://monitorsecreto-scarletcord.es/aviso-legal-en.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monitorsecreto-scarletcord.es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monitorsecreto-scarletcord.es/aviso-legal-en.html"/>
+  </url>
+  <url>
+    <loc>https://monitorsecreto-scarletcord.es/privacidad.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monitorsecreto-scarletcord.es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monitorsecreto-scarletcord.es/privacidad-en.html"/>
+  </url>
+  <url>
+    <loc>https://monitorsecreto-scarletcord.es/privacidad-en.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://monitorsecreto-scarletcord.es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monitorsecreto-scarletcord.es/privacidad-en.html"/>
+  </url>
 </urlset>
