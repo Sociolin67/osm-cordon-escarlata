@@ -1,6 +1,6 @@
 /* Monitor Secreto · Cordón Escarlata — service worker
    Al cambiar cualquier archivo, subir el número de VERSION. */
-const VERSION = 'osm-osc-v5';
+const VERSION = 'osm-osc-v6';
 const BASICOS = [
   './', 'index.html', 'index-en.html',
   'monitor-secreto.html', 'monitor-secreto-en.html',
