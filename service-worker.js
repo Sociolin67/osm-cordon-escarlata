@@ -1,6 +1,6 @@
 /* Monitor Secreto · Cordón Escarlata — service worker
    Al cambiar cualquier archivo, subir el número de VERSION. */
-const VERSION = 'osm-osc-v6';
+const VERSION = 'osm-osc-v7';
 const BASICOS = [
   './', 'index.html', 'index-en.html',
   'monitor-secreto.html', 'monitor-secreto-en.html',
@@ -8,7 +8,7 @@ const BASICOS = [
   'cronicas.html', 'cronicas-en.html',
   'contacto.html', 'contacto-en.html',
   'aviso-legal.html', 'aviso-legal-en.html', 'privacidad.html', 'privacidad-en.html',
-  'estilos.css?v=7', 'emblema-osm.jpg', 'emblema-osc.jpg', 'icon-192.png'
+  'estilos.css?v=7', 'fuentes.css', 'emblema-osm.jpg', 'emblema-osc.jpg', 'icon-192.png'
 ];
 
 self.addEventListener('install', e => {
