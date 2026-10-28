@@ -56,7 +56,7 @@ a:hover { color: var(--oro-oscuro); }
 h1, h2, h3, h4 {
   font-family: var(--f-titulo);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   margin: 0 0 .6em;
   color: var(--principal);
 }
@@ -66,6 +66,9 @@ h3 { font-size: 1.2rem; letter-spacing: .02em; }
 p { margin: 0 0 1em; }
 
 .contenedor { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 1.4rem; }
+/* Medida de lectura: 45-75 caracteres por línea en el texto corrido */
+.contenedor > :is(p, ul, ol, blockquote, h3, h4),
+.contenedor > article { max-width: 36.5rem; margin-left: auto; margin-right: auto; }
 .seccion { padding: 4rem 0; }
 .seccion.alt { background: var(--fondo-alt); }
 .seccion-titulo { text-align: center; margin-bottom: 2.4rem; }
