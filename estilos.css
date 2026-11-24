@@ -316,3 +316,13 @@ footer a:hover { color: var(--oro); }
 .acceso-orden .rotulo { font-family: var(--f-titulo); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #F0BC70; }
 .acceso-orden:hover .rotulo, .acceso-orden:focus-visible .rotulo { color: #fff; }
 .acceso-orden:focus-visible { outline: none; }
+
+/* Página del Monitor Secreto: antes en estilos en línea (24-nov-2026) */
+.contenedor.estrecho { max-width: 820px; }
+h3.separado { margin-top: 2.4rem; }
+.gobernante img.retrato {
+  width: 120px; height: 120px; aspect-ratio: 1; border-radius: 50%; object-fit: cover;
+  margin: 1.4rem auto 0; box-shadow: 0 0 0 3px var(--oro);
+}
+.gobernante img.distintivo { width: 120px; height: 120px; margin: 1.4rem auto 0; }
+.gobernante .correo { margin: .4rem 0 0; font-size: 1rem; overflow-wrap: anywhere; }
